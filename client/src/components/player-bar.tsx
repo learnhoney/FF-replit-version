@@ -31,8 +31,8 @@ export function PlayerBar() {
             className="w-14 h-14 rounded"
           />
           <div>
-            <h4 className="text-sm font-medium">Investment Fundamentals</h4>
-            <p className="text-xs text-gray-400">Market Maestro Series</p>
+            <h4 className="text-sm font-medium">Portfolio Building Beats</h4>
+            <p className="text-xs text-gray-400">FinanceFetish Exclusive</p>
           </div>
           <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white">
             <Heart className="w-4 h-4" />

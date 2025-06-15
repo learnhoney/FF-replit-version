@@ -86,12 +86,17 @@ export function Sidebar() {
       </div>
 
       {/* Upgrade Card */}
-      <div className="mt-8 bg-gradient-to-r from-[#FFD700] to-yellow-500 p-4 rounded-lg text-black">
-        <h4 className="font-semibold text-sm mb-1">Premium Financial Vibes</h4>
-        <p className="text-xs mb-3">Unlock exclusive courses & ad-free learning</p>
-        <Button className="w-full bg-black text-white hover:bg-gray-800 text-xs font-medium">
-          Upgrade Now
-        </Button>
+      <div className="mt-8 bg-gradient-to-br from-[#FFD700] via-[#FF6B35] to-[#1DB954] p-5 rounded-xl text-black relative overflow-hidden">
+        <div className="absolute top-2 right-2 opacity-20">
+          <span className="text-2xl">🎵</span>
+        </div>
+        <div className="relative z-10">
+          <h4 className="font-black text-sm mb-2">Premium Financial Beats</h4>
+          <p className="text-xs mb-4 font-medium">Unlock exclusive wealth-building courses & ad-free financial streaming</p>
+          <Button className="w-full bg-black text-white hover:bg-gray-800 text-xs font-bold py-2 rounded-lg">
+            Go Premium
+          </Button>
+        </div>
       </div>
     </div>
   );
