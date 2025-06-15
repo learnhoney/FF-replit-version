@@ -13,31 +13,33 @@ export function Sidebar() {
       {/* Logo */}
       <div className="mb-8">
         <h1 className="text-2xl font-bold text-[#1DB954] flex items-center">
-          <span className="mr-2">📈</span>
+          <div className="mr-3 bg-gradient-to-br from-[#1DB954] to-[#FFD700] p-2 rounded-lg">
+            <span className="text-black text-lg">💰</span>
+          </div>
           FinanceFetish
         </h1>
-        <p className="text-xs text-gray-400 mt-1">Your Financial Beats</p>
+        <p className="text-xs text-gray-400 mt-2 ml-12">Where Money Meets Melody</p>
       </div>
 
       {/* Navigation */}
       <nav className="mb-8">
-        <ul className="space-y-4">
+        <ul className="space-y-2">
           <li>
-            <Button variant="ghost" className="w-full justify-start text-white hover:text-[#1DB954] hover:bg-[#282828]">
+            <Button variant="ghost" className="w-full justify-start text-white hover:text-[#1DB954] hover:bg-[#282828] rounded-lg">
               <Home className="w-5 h-5 mr-3" />
-              Home
+              Market Hub
             </Button>
           </li>
           <li>
-            <Button variant="ghost" className="w-full justify-start text-gray-400 hover:text-[#1DB954] hover:bg-[#282828]">
+            <Button variant="ghost" className="w-full justify-start text-gray-400 hover:text-[#1DB954] hover:bg-[#282828] rounded-lg">
               <Search className="w-5 h-5 mr-3" />
-              Discover
+              Discover Trends
             </Button>
           </li>
           <li>
-            <Button variant="ghost" className="w-full justify-start text-gray-400 hover:text-[#1DB954] hover:bg-[#282828]">
+            <Button variant="ghost" className="w-full justify-start text-gray-400 hover:text-[#1DB954] hover:bg-[#282828] rounded-lg">
               <Bookmark className="w-5 h-5 mr-3" />
-              Your Library
+              My Portfolio
             </Button>
           </li>
         </ul>

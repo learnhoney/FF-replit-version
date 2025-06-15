@@ -169,7 +169,7 @@ export default function CoursePage() {
                   </div>
                   <div className="flex justify-between">
                     <span>Students:</span>
-                    <span>{course.reviewCount.toLocaleString()}+</span>
+                    <span>{course.reviewCount?.toLocaleString() || 0}+</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Certificate:</span>

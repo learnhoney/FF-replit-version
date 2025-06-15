@@ -56,27 +56,49 @@ export default function HomePage() {
         <div className="flex-1 overflow-y-auto p-8">
           {/* Hero Section */}
           <div className="mb-12">
-            <div className="relative bg-gradient-to-r from-[#1DB954] to-[#FFD700] p-8 rounded-lg text-black overflow-hidden">
+            <div className="relative bg-gradient-to-br from-[#1DB954] via-[#FFD700] to-[#FF6B35] p-12 rounded-2xl text-black overflow-hidden">
+              <div className="absolute inset-0 bg-black/10 backdrop-blur-sm rounded-2xl"></div>
               <div className="relative z-10">
-                <h1 className="text-4xl font-bold mb-4">
-                  Turn Up Your Financial IQ
+                <div className="flex items-center mb-4">
+                  <div className="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
+                  <div className="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div>
+                  <div className="w-3 h-3 bg-green-500 rounded-full mr-4"></div>
+                  <span className="text-sm font-medium opacity-70">Now Playing: Financial Freedom</span>
+                </div>
+                <h1 className="text-5xl font-black mb-6 leading-tight">
+                  Drop the Beat on 
+                  <br />Your Financial Future
                 </h1>
-                <p className="text-lg mb-6">
-                  Stream exclusive finance courses, podcasts, and tutorials.
-                  <br />Your money playlist awaits – let's make those numbers dance! 💰
+                <p className="text-xl mb-8 max-w-2xl leading-relaxed">
+                  Welcome to FinanceFetish – where money meets melody. Stream premium finance education, 
+                  master market rhythms, and compose your wealth symphony. Your financial playlist starts here.
                 </p>
-                <div className="flex space-x-4">
-                  <Button className="bg-black text-white hover:bg-gray-800 px-8 py-3">
-                    <Play className="w-4 h-4 mr-2" />
-                    Start Learning
+                <div className="flex space-x-6">
+                  <Button className="bg-black text-white hover:bg-gray-800 px-10 py-4 text-lg font-semibold rounded-full">
+                    <Play className="w-5 h-5 mr-3" />
+                    Hit Play on Wealth
                   </Button>
-                  <Button variant="outline" className="border-black text-black hover:bg-black hover:text-white px-8 py-3">
-                    Browse Content
+                  <Button variant="outline" className="border-2 border-black text-black hover:bg-black hover:text-white px-10 py-4 text-lg font-semibold rounded-full">
+                    Browse the Charts
                   </Button>
                 </div>
               </div>
-              <div className="absolute right-8 top-1/2 transform -translate-y-1/2 opacity-10">
-                <div className="text-9xl">📈</div>
+              <div className="absolute right-12 top-1/2 transform -translate-y-1/2 opacity-20">
+                <div className="text-[120px] animate-pulse">🎵</div>
+              </div>
+              <div className="absolute bottom-4 right-4 opacity-30">
+                <div className="flex space-x-1">
+                  {Array.from({ length: 20 }).map((_, i) => (
+                    <div 
+                      key={i} 
+                      className="w-1 bg-black rounded-full animate-pulse"
+                      style={{ 
+                        height: `${Math.random() * 40 + 10}px`,
+                        animationDelay: `${i * 0.1}s`
+                      }}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -84,9 +106,12 @@ export default function HomePage() {
           {/* Recently Played */}
           <section className="mb-12">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold">Recently Played</h2>
+              <h2 className="text-2xl font-bold flex items-center">
+                <div className="w-2 h-2 bg-[#1DB954] rounded-full mr-3 animate-pulse"></div>
+                Recently Streamed
+              </h2>
               <Button variant="link" className="text-gray-400 hover:text-white text-sm">
-                Show all
+                View All Tracks
               </Button>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -133,9 +158,15 @@ export default function HomePage() {
           {/* Premium Courses */}
           <section className="mb-12">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold">Premium Courses</h2>
+              <h2 className="text-2xl font-bold flex items-center">
+                <div className="w-2 h-2 bg-[#FFD700] rounded-full mr-3 animate-pulse"></div>
+                Premium Albums
+                <div className="ml-2 bg-gradient-to-r from-[#FFD700] to-[#FF6B35] text-black px-2 py-1 rounded-full text-xs font-semibold">
+                  EXCLUSIVE
+                </div>
+              </h2>
               <Button variant="link" className="text-gray-400 hover:text-white text-sm">
-                View all
+                Explore Collection
               </Button>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
@@ -166,7 +197,10 @@ export default function HomePage() {
       {/* Right Sidebar - Queue */}
       <div className="w-80 bg-[#191414] p-6 border-l border-gray-700">
         <div className="mb-8">
-          <h3 className="text-lg font-semibold mb-4">Up Next in Queue</h3>
+          <h3 className="text-lg font-semibold mb-4 flex items-center">
+            <div className="w-2 h-2 bg-[#1DB954] rounded-full mr-3"></div>
+            Next in Financial Queue
+          </h3>
           <div className="space-y-4">
             {recentVideos.slice(0, 3).map((video) => (
               <div
@@ -187,7 +221,10 @@ export default function HomePage() {
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold mb-4">Recommended for You</h3>
+          <h3 className="text-lg font-semibold mb-4 flex items-center">
+            <div className="w-2 h-2 bg-[#FFD700] rounded-full mr-3"></div>
+            Curated for Your Portfolio
+          </h3>
           <div className="space-y-4">
             {courses?.slice(0, 2).map((course) => (
               <div
