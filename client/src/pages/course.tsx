@@ -93,7 +93,7 @@ export default function CoursePage() {
                 <div className="flex items-center gap-1">
                   <Star className="w-4 h-4 text-[#FFD700] fill-current" />
                   <span>{course.rating}</span>
-                  <span>({course.reviewCount.toLocaleString()} reviews)</span>
+                  <span>({course.reviewCount?.toLocaleString() || 0} reviews)</span>
                 </div>
                 <div className="flex items-center gap-1">
                   <Clock className="w-4 h-4" />
@@ -153,12 +153,10 @@ export default function CoursePage() {
                   )}
                 </div>
 
-                <Link href={`/checkout/${course.id}`}>
-                  <Button className="w-full bg-[#1DB954] hover:bg-[#1ed760] text-black font-semibold py-3 mb-4">
-                    <Play className="w-4 h-4 mr-2" />
-                    Enroll Now
-                  </Button>
-                </Link>
+                <Button className="w-full bg-[#1DB954] hover:bg-[#1ed760] text-black font-semibold py-3 mb-4">
+                  <Play className="w-4 h-4 mr-2" />
+                  Start Learning
+                </Button>
 
                 <div className="space-y-3 text-sm text-gray-400">
                   <div className="flex justify-between">

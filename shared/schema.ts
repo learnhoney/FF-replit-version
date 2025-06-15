@@ -7,8 +7,6 @@ export const users = pgTable("users", {
   username: text("username").notNull().unique(),
   email: text("email").notNull().unique(),
   password: text("password").notNull(),
-  stripeCustomerId: text("stripe_customer_id"),
-  stripeSubscriptionId: text("stripe_subscription_id"),
   createdAt: timestamp("created_at").defaultNow(),
 });
 
@@ -39,7 +37,7 @@ export const playlists = pgTable("playlists", {
 });
 
 export const videos = pgTable("videos", {
-  id: serial("id").primaryYouTubekey(),
+  id: serial("id").primaryKey(),
   title: text("title").notNull(),
   description: text("description"),
   youtubeId: text("youtube_id").notNull(),

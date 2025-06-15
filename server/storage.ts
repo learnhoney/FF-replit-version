@@ -11,7 +11,7 @@ export interface IStorage {
   getUserByUsername(username: string): Promise<User | undefined>;
   getUserByEmail(email: string): Promise<User | undefined>;
   createUser(user: InsertUser): Promise<User>;
-  updateUserStripeInfo(id: number, customerId: string, subscriptionId: string): Promise<User>;
+
   
   // Courses
   getCourses(): Promise<Course[]>;
@@ -97,12 +97,14 @@ export class MemStorage implements IStorage {
       this.playlists.set(id, {
         ...playlist,
         id,
+        description: playlist.description || null,
+        trackCount: playlist.trackCount || null,
         createdAt: new Date()
       });
     });
 
     // Seed courses
-    const coursesData: Array<Omit<Course, 'id' | 'createdAt'>> = [
+    const coursesData = [
       {
         title: "The Wealth Symphony",
         description: "Complete investment masterclass covering stocks, bonds, ETFs, and portfolio management strategies.",
@@ -149,6 +151,10 @@ export class MemStorage implements IStorage {
       this.courses.set(id, {
         ...course,
         id,
+        originalPrice: course.originalPrice || null,
+        rating: course.rating || null,
+        reviewCount: course.reviewCount || null,
+        isPremium: course.isPremium || null,
         createdAt: new Date()
       });
     });
@@ -194,6 +200,8 @@ export class MemStorage implements IStorage {
       this.videos.set(id, {
         ...video,
         id,
+        description: video.description || null,
+        playlistId: video.playlistId || null,
         createdAt: new Date()
       });
     });
@@ -216,25 +224,10 @@ export class MemStorage implements IStorage {
     const user: User = { 
       ...insertUser, 
       id,
-      stripeCustomerId: null,
-      stripeSubscriptionId: null,
       createdAt: new Date()
     };
     this.users.set(id, user);
     return user;
-  }
-
-  async updateUserStripeInfo(id: number, customerId: string, subscriptionId: string): Promise<User> {
-    const user = this.users.get(id);
-    if (!user) throw new Error('User not found');
-    
-    const updatedUser = {
-      ...user,
-      stripeCustomerId: customerId,
-      stripeSubscriptionId: subscriptionId
-    };
-    this.users.set(id, updatedUser);
-    return updatedUser;
   }
 
   async getCourses(): Promise<Course[]> {
