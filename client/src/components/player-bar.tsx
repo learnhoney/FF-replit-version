@@ -21,14 +21,14 @@ export function PlayerBar() {
   const [volume, setVolume] = useState([75]);
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-[#282828] border-t border-gray-700 p-4">
+    <div className="fixed bottom-0 left-0 right-0 bg-[#282828] border-t border-gray-700 px-4 py-2">
       <div className="flex items-center justify-between">
         {/* Currently Playing */}
-        <div className="flex items-center space-x-4 flex-1">
+        <div className="flex items-center space-x-3 flex-1">
           <img
             src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=80&h=80"
             alt="Current lesson"
-            className="w-14 h-14 rounded"
+            className="w-10 h-10 rounded"
           />
           <div>
             <h4 className="text-sm font-medium">Portfolio Building Beats</h4>
@@ -40,33 +40,33 @@ export function PlayerBar() {
         </div>
 
         {/* Player Controls */}
-        <div className="flex flex-col items-center space-y-2 flex-1">
-          <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white">
-              <Shuffle className="w-4 h-4" />
+        <div className="flex items-center space-x-4 flex-1 justify-center">
+          <div className="flex items-center space-x-3">
+            <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white p-1">
+              <Shuffle className="w-3 h-3" />
             </Button>
-            <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white">
-              <SkipBack className="w-4 h-4" />
+            <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white p-1">
+              <SkipBack className="w-3 h-3" />
             </Button>
             <Button
-              size="icon"
-              className="w-10 h-10 bg-white text-black rounded-full hover:scale-105 transition-transform"
+              size="sm"
+              className="w-8 h-8 bg-white text-black rounded-full hover:scale-105 transition-transform"
               onClick={() => setIsPlaying(!isPlaying)}
             >
               {isPlaying ? (
-                <Pause className="w-4 h-4" />
+                <Pause className="w-3 h-3" />
               ) : (
-                <Play className="w-4 h-4" />
+                <Play className="w-3 h-3" />
               )}
             </Button>
-            <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white">
-              <SkipForward className="w-4 h-4" />
+            <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white p-1">
+              <SkipForward className="w-3 h-3" />
             </Button>
-            <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white">
-              <Repeat className="w-4 h-4" />
+            <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white p-1">
+              <Repeat className="w-3 h-3" />
             </Button>
           </div>
-          <div className="flex items-center space-x-2 w-full max-w-md">
+          <div className="flex items-center space-x-2 w-full max-w-sm ml-4">
             <span className="text-xs text-gray-400">2:34</span>
             <Slider
               value={progress}

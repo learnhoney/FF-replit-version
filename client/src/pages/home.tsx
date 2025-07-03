@@ -2,7 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 import { Sidebar } from "@/components/sidebar";
 import { PlayerBar } from "@/components/player-bar";
 import { CourseCard } from "@/components/course-card";
-import { NewsletterSignup } from "@/components/newsletter-signup";
 import { Button } from "@/components/ui/button";
 import { Play, Search, Home, Bookmark, ChevronLeft, ChevronRight } from "lucide-react";
 import type { Course, Video } from "@shared/schema";
@@ -189,8 +188,7 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* Newsletter Signup */}
-          <NewsletterSignup />
+
         </div>
       </div>
 
