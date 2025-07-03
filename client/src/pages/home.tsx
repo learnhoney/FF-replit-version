@@ -1,9 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
+import { Link } from "wouter";
 import { Sidebar } from "@/components/sidebar";
 import { PlayerBar } from "@/components/player-bar";
 import { CourseCard } from "@/components/course-card";
 import { Button } from "@/components/ui/button";
-import { Play, Search, Home, Bookmark, ChevronLeft, ChevronRight } from "lucide-react";
+import { Play, Search, Home, Bookmark, ChevronLeft, ChevronRight, User, UserPlus } from "lucide-react";
 import type { Course, Video } from "@shared/schema";
 
 export default function HomePage() {
@@ -42,12 +43,16 @@ export default function HomePage() {
             </Button>
           </div>
           <div className="flex items-center space-x-4">
-            <Button className="bg-[#1DB954] text-black hover:bg-[#1ed760] font-medium">
-              Sign up
-            </Button>
-            <Button variant="ghost" className="text-gray-300 hover:text-white font-medium">
-              Log in
-            </Button>
+            <Link href="/signup">
+              <Button className="bg-[#1DB954] text-black hover:bg-[#1ed760] font-medium">
+                Sign up
+              </Button>
+            </Link>
+            <Link href="/login">
+              <Button variant="ghost" className="text-gray-300 hover:text-white font-medium">
+                Log in
+              </Button>
+            </Link>
           </div>
         </div>
 
